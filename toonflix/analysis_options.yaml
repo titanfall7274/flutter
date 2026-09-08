@@ -9,6 +9,11 @@
 # packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
 
+# 인자 뒤에 쉼표(,)가 있으면 dart format이 한 줄로 합치지 않고 줄바꿈을 유지한다.
+# (기본값 automate는 짧으면 쉼표를 지우고 한 줄로 합쳐서 // MaterialApp 닫는 표시가 사라짐)
+formatter:
+  trailing_commas: preserve
+
 analyzer:
   exclude:
     - build/**
