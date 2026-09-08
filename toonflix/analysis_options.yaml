@@ -36,6 +36,11 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
+    # flutter_lints 6.x에는 아래 const 규칙이 빠져 있어서 직접 켠다.
+    # 저장 시 source.fixAll이 이 규칙 위반을 고치면서 const를 자동으로 붙인다.
+    - prefer_const_constructors
+    - prefer_const_literals_to_create_immutables
+    - prefer_const_declarations
     # avoid_print: false  # Uncomment to disable the `avoid_print` rule
     # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
 
