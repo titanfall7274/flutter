@@ -16,12 +16,18 @@ class Webtoon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      // 탭, 마우스 이동, 드래그, 줌 감지 가능
       onTap: () {
+        // 탭 리스너
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) =>
-                DetailScreen(title: title, thumb: thumb, id: id),
+            builder: (context) => DetailScreen(
+              title: title,
+              thumb: thumb,
+              id: id,
+            ),
+            fullscreenDialog: true, // 모달처럼 올라오는 화면으로표시하는 옵션
           ),
         );
       },

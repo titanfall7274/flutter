@@ -21,9 +21,9 @@ class DetailScreen extends StatelessWidget {
         foregroundColor: Colors.green,
 
         centerTitle: true,
-        title: const Text(
-          "웹툰",
-          style: TextStyle(
+        title: Text(
+          title,
+          style: const TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.w500,
           ),
