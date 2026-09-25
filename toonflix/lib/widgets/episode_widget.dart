@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:toonflix/models/webtoon_episode_model.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -14,9 +15,10 @@ class Episode extends StatelessWidget {
 
   Future<void> onButtonTap() async {
     // final url = Uri.parse("https://google.com");
-    await launchUrlString(
-      "https://comic.naver.com/webtoon/detail?titleId=P=$webtoonId&no=${episode.id}&week=tue",
-    ); // import 필요
+    final url =
+        "https://comic.naver.com/webtoon/detail?titleId=$webtoonId&no=${episode.id}";
+    print("${(await http.head(Uri.parse(url))).statusCode} $url");
+    await launchUrlString(url); // import 필요
 
     // titleId 고정, no = 회차
     // 176화 urlString: https://comic.naver.com/webtoon/detail?titleId=784248&no=179&week=tue
@@ -26,6 +28,8 @@ class Episode extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onButtonTap,
+      // 기본값(deferToChild)은 그려진 자식 위만 탭으로 잡는다. Spacer 빈 공간도 잡으려면 opaque
+      behavior: HitTestBehavior.opaque,
       child: Container(
         child: Padding(
           padding: const EdgeInsets.all(1),
