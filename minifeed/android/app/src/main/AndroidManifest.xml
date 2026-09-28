@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- google_fonts 폰트 다운로드. debug 빌드에만 자동으로 들어가서 release용으로 명시 -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:label="minifeed"
         android:name="${applicationName}"
