@@ -58,6 +58,12 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  # MP1 더미 게시글·댓글. InMemoryPostRepository가 rootBundle로 읽는다.
+  # 폴더 등록은 하위 폴더를 포함하지 않아서 하나씩 적는다.
+  assets:
+    - assets/dummy/post/
+    - assets/dummy/comment/
+
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
